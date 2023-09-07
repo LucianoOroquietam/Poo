@@ -12,13 +12,17 @@ public class MainFutbol {
         if (messi.estaDisponible()){
             System.out.println(messi.getNombre() + " " + messi.getApellido() +  " esta disponible para un evento solidario");
         }
-        CuerpoTecnico scaloni = new CuerpoTecnico("Lionel","Scaloni","123ytr",LocalDate.of(1978,5,16),"En pais de origen","DT");
-        CuerpoTecnico scaloni2 = new CuerpoTecnico("Lionel","Scaloni","123ytr",LocalDate.of(1978,5,16),"En pais de origen","DT");
+
+        CuerpoTecnico scaloni = new Dt("Lionel","Scaloni","123ytr",LocalDate.of(1978,5,16),"En pais de origen","DT","Argentina");
+        CuerpoTecnico marceloDAndrea = new Masajista("Marcelo","Dandrea","457uyt",LocalDate.of(1973,05,10),"en pais de origen", "masajista","masaje deportivo", 10);
+
 
         System.out.println(scaloni.esDt());
         System.out.println(scaloni.esMasajista());
+        System.out.println("marcelo es masajista? " + marceloDAndrea.esMasajista());
+        System.out.println(marceloDAndrea);
         System.out.println(scaloni);
-        System.out.println(scaloni2);
+
 
     }
 

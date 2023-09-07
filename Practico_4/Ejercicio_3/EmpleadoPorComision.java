@@ -11,13 +11,10 @@ public class EmpleadoPorComision extends Empleado {
         this.porcentajePorCantidadVentas = porcentajePorCantidadVentas;
     }
 
-<<<<<<< HEAD
 
-    public double calcularSalario(Empleado empleado) {
-=======
     @Override
     public double calcularSalario() {
->>>>>>> 96d98ba114e4b1b29cd5036075cf07f2614c7fc9
+
         return sueldoFijo +(cantVentas * porcentajePorCantidadVentas);
     }
 }

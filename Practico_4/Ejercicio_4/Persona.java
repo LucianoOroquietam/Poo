@@ -23,14 +23,13 @@ public class Persona {
         }
 
     }
-  public String getEstado(){
+   public String getEstado(){
         return estado;
-  }
+   }
 
-  public boolean estaDisponible(){
-      return estado.equalsIgnoreCase("En pais de origen");
-  }
-
+   public boolean estaDisponible(){
+          return estado.equalsIgnoreCase("En pais de origen");
+    }
 
     public String getNombre() {
         return nombre;
