@@ -14,7 +14,7 @@ public class Jerarquico extends Empleado {
 
 
     public void agregarPersona(Empleado e){
-        //Si p no es nulo y no está en la lista, se agrega a la lista.
+        //Si e no es nulo y no está en la lista, se agrega a la lista.
         if ((e!=null) && (!empleadoACargo.contains(e))){
             empleadoACargo.add(e);
         }
