@@ -1,7 +1,6 @@
 package Practico_4.Ejercicio_5;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class InformacionProducto {
     private LocalDate fecha_vencimiento;
