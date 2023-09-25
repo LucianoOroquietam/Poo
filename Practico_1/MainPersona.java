@@ -1,4 +1,4 @@
-package Poo.Practico_1.Practico_1;
+package Practico_1;
 import java.time.LocalDate;
 public class MainPersona {
     public static void main(String[] args) {

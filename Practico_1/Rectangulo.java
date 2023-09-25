@@ -1,4 +1,4 @@
-package Poo.Practico_1.Practico_1;
+package Practico_1;
 
 public class Rectangulo {
     private PuntoGeometrico a,b,c,d;

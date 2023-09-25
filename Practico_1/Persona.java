@@ -1,4 +1,4 @@
-package Poo.Practico_1.Practico_1;
+package Practico_1;
 
 import java.time.LocalDate;
 import java.time.Period;
