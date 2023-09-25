@@ -1,0 +1,7 @@
+el comportamiento de un objeto lo definen los metodos
+por ejemplo 
+obetener cantpuntos
+obtener nombre
+setear nombre
+obtener promedio etc
+le cambiamos la variable a ese objeto
