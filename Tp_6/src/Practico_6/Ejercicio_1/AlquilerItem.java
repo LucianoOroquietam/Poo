@@ -1,24 +1,18 @@
 package Practico_6.Ejercicio_1;
 
-
-import java.time.LocalDate;
-
 public abstract class AlquilerItem {
 
-
     private String nombre; // Nombre del ítem alquilable
-    private int cantidadCopiasDisponibles; // Cantidad de copias disponibles
+    private double precio;
 
-
-
-
-    // Constructor
-    public AlquilerItem(String nombre, int cantidadCopiasDisponibles) {
+    public AlquilerItem(String nombre, double precio) {
         this.nombre = nombre;
-        this.cantidadCopiasDisponibles = cantidadCopiasDisponibles;
+        this.precio = precio;
+
     }
 
     public abstract boolean sePuedeAlquilar(); // Verificar si el ítem puede ser alquilado
-    public abstract void alquilar(); // Alquilar el ítem
-    public abstract boolean estaVencido(); // Verificar si el alquiler está vencido
+    public abstract boolean alquilar(); // Alquilar el ítem
+    public abstract void devolverItem(); // Devolver el ítem
+
 }

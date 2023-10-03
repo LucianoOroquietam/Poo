@@ -1,30 +1,49 @@
 package Practico_6.Ejercicio_1;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class SistemaAlquiller {
-    private ArrayList<AlquilerPelicula>peliculas;
-    private ArrayList<AlquilerVehiculo>vehiculos;
+    private ArrayList<Cliente>clientes;
+    private ArrayList<Alquiler>alquiler;
 
 
     public SistemaAlquiller(){
-        this.peliculas = new ArrayList<>();
-        this.vehiculos = new ArrayList<>();
+        this.clientes = new ArrayList<>();
+        this.alquiler= new ArrayList<>();
     }
 
-    public void addVehiculo(AlquilerVehiculo v){
-
+    public void addCliente(Cliente c){
+        if(c!=null && !clientes.contains(c)){
+            clientes.add(c);
+        }
     }
 
-    public void addPelicula(AlquilerPelicula p){}
-
-    public ArrayList<AlquilerPelicula> getPeliculas() {
-        return new ArrayList<>(peliculas);
+    public void addAlquiler(Alquiler a){
+        if(a!=null && !alquiler.contains(a)){
+            alquiler.add(a);
+        }
     }
 
-    public ArrayList<AlquilerVehiculo> getVehiculos() {
-        return new ArrayList<>(vehiculos);
+
+    public ArrayList<Cliente> getClientesAlquilerVencido() {
+      ArrayList<Cliente> alquilerVencido = new ArrayList<>();
+
+      for (int i =0; i<alquiler.size(); i++){
+          Alquiler a = alquiler.get(i);
+          if (alquilerVencido(a)){
+            alquilerVencido.add(a.getCliente());
+          }
+      }
+      return alquilerVencido;
     }
+
+    public boolean alquilerVencido(Alquiler a){
+        //la fecha actual es posterior a la fecha vencimiento (si es true esta vencido)
+        return LocalDate.now().isAfter(a.getFechaVencimiento());
+    }
+
+
 }
 
 

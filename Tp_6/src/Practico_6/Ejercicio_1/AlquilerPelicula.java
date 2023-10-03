@@ -12,8 +12,8 @@ public class AlquilerPelicula extends AlquilerItem {
         this.cantCopia = cantCopia;
     }
 
-    //Una película puede ser alquilada si hay copias aún disponibles,
 
+    //Una película puede ser alquilada si hay copias aún disponibles
     @Override
    public boolean sePuedeAlquilar() {
         if (estaDisponible()){
@@ -24,14 +24,15 @@ public class AlquilerPelicula extends AlquilerItem {
     }
 
     @Override
-    public void alquilar(Cliente cliente, LocalDate fechaDevolucion) {
-
+    public boolean alquilar() {
+       return sePuedeAlquilar();
     }
 
     @Override
-    public boolean estaVencido() {
-        return false;
+    public void devolverItem() {
+        cantCopia++;
     }
+
 
     public boolean estaDisponible() {
         return cantCopia>0;
