@@ -17,13 +17,13 @@ public class Main {
 		System.out.println(f.listarMedicamentos(c1));
 		System.out.println(f.listarMedicamentos(c2));
 		
-		//CondicionDeBusqueda and1 = new CondicionAnd(new CondicionNot(c1), 
-		//		c2);
+		//CondicionDeBusqueda and1 = new CondicionAnd(new CondicionNot(c1),c2);
 		CondicionDeBusqueda and1 = new CondicionAnd(c1,c2);
 		
-		System.out.println(f.listarMedicamentos(
-				new CondicionAnd(and1, new CondicionPorLab("Pfizer"))));
-		
+		System.out.println(
+				f.listarMedicamentos(new CondicionAnd(and1, new CondicionPorLab("Pfizer")))
+		);
+
 	}
 
 }
