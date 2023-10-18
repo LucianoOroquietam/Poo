@@ -1,5 +1,5 @@
-package Ejercicio_2.Busqueda;
-import Ejercicio_2.Documento;
+package Ejercicio_3.Busqueda;
+import Ejercicio_3.Documento;
 
 public abstract class BuscarPorDocumento {
     public abstract boolean cumple (Documento d);

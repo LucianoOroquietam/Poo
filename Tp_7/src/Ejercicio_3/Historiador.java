@@ -1,6 +1,6 @@
-package Ejercicio_2;
+package Ejercicio_3;
 
-import Ejercicio_2.Busqueda.BuscarPorDocumento;
+import Ejercicio_3.Busqueda.BuscarPorDocumento;
 
 import java.util.ArrayList;
 

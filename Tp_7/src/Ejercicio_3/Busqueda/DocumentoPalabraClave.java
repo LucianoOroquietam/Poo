@@ -1,6 +1,6 @@
-package Ejercicio_2.Busqueda;
+package Ejercicio_3.Busqueda;
 
-import Ejercicio_2.Documento;
+import Ejercicio_3.Documento;
 
 public class DocumentoPalabraClave extends BuscarPorDocumento {
     //Todos los documentos que contengan una palabra clave dada.
