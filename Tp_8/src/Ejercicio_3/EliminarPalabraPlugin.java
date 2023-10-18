@@ -5,7 +5,7 @@ public class EliminarPalabraPlugin implements Plugin {
     //dada por el usuario.
 
     private String palabraDada;
-    private String textoModificado;
+
 
     public EliminarPalabraPlugin(String palabraDada) {
         this.palabraDada = palabraDada;
@@ -14,10 +14,8 @@ public class EliminarPalabraPlugin implements Plugin {
     @Override
     public void ejecutar(String texto) {
         // Reemplaza la palabra a eliminar por un espacio en blanco
-        textoModificado = texto.replace(palabraDada, " ");
+        texto = texto.replace(palabraDada, " ");
     }
 
-    public String getTextoModificado() {
-        return textoModificado;
-    }
+  
 }
