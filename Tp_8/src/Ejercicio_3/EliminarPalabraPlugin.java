@@ -17,5 +17,5 @@ public class EliminarPalabraPlugin implements Plugin {
         texto = texto.replace(palabraDada, " ");
     }
 
-  
+
 }
