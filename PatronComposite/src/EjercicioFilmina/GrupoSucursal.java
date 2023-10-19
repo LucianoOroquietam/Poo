@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GrupoSucursal extends Empresa{
-    ArrayList<Empresa>empleados;
+   private ArrayList<Empresa>empleados;
 
     public GrupoSucursal(String nombre , String ubicacion){
         super(nombre,ubicacion);

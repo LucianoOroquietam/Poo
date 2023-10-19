@@ -14,14 +14,14 @@ public class Main {
 
             // Crear grupos de sucursal y agregar empleados
             GrupoSucursal grupo1 = new GrupoSucursal("Grupo 1", "Ubicacion 1");
-            grupo1.empleados.add(empleado1);
-            grupo1.empleados.add(empleado2);
-            grupo1.empleados.add(empleado4);
+            grupo1.getEmpleados().add(empleado1);
+            grupo1.getEmpleados().add(empleado2);
+            grupo1.getEmpleados().add(empleado4);
 
 
             GrupoSucursal grupo2 = new GrupoSucursal("Grupo 2", "Ubicacion 2");
-            grupo2.empleados.add(empleado3);
-            grupo1.empleados.add(empleado5);
+            grupo2.getEmpleados().add(empleado3);
+            grupo1.getEmpleados().add(empleado5);
 
             // Llamar al método getEmpleadoEspecialidad para obtener empleados con la especialidad "Programador"
             String especialidadBuscada = "Programador";
