@@ -1,4 +1,4 @@
-package Ejercicio_3;
+package Ejercicio_2;
 
 public class ReemplazoTextoPlugin implements Plugin {
 

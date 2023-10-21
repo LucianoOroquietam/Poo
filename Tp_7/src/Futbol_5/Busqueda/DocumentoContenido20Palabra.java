@@ -1,6 +1,6 @@
-package Ejercicio_3.Busqueda;
+package Ejercicio_2.Busqueda;
 
-import Ejercicio_3.Documento;
+import Ejercicio_2.Documento;
 
 public class DocumentoContenido20Palabra extends BuscarPorDocumento{
 

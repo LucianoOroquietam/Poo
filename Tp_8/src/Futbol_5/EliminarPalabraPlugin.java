@@ -1,4 +1,4 @@
-package Ejercicio_3;
+package Ejercicio_2;
 
 public class EliminarPalabraPlugin implements Plugin {
     //EliminarPalabraPlugin: Elimina del texto todas las palabras que coincidan con una
