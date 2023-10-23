@@ -9,9 +9,13 @@ public class AlquilerCancha {
     private int id;
     private double pagoCancha;
 
-    public AlquilerCancha(LocalDate fechaAlquiler, int id, double pagoCancha) {
+    public AlquilerCancha(LocalDate fechaAlquiler, int id){
         this.fechaAlquiler = fechaAlquiler;
         this.id = id;
+    }
+
+    public AlquilerCancha(LocalDate fechaAlquiler, int id, double pagoCancha) {
+        this(fechaAlquiler,id);
         this.pagoCancha = pagoCancha;
     }
 
@@ -27,14 +31,8 @@ public class AlquilerCancha {
         return pagoCancha;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        try {
-            AlquilerCancha a = (AlquilerCancha) o;
-            return this.getFechaAlquiler().equals(a.getFechaAlquiler());
-        }catch (Exception exc){
-            return false;
-        }
-
+    public double setPagoCancha(double pago){
+       return this.pagoCancha = pago;
     }
+
 }

@@ -1,5 +1,7 @@
 package Ejercicio_2;
 
+import Ejercicio_2.Filtros.FiltroSocio;
+
 import java.util.ArrayList;
 
 public class Socio implements Comparable<Socio>{
@@ -10,11 +12,12 @@ public class Socio implements Comparable<Socio>{
     private Boolean ultimaCuota;
     private ArrayList<AlquilerCancha>alquilerCanchas;
 
-    public Socio(String nombre, String apellido, int edad, Boolean cuota) {
+    public Socio(String nombre, String apellido, int edad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
-        this.ultimaCuota = cuota;
+        //todavia no pago nada
+        this.ultimaCuota = false;
         this.alquilerCanchas = new ArrayList<>();
     }
 
@@ -33,41 +36,52 @@ public class Socio implements Comparable<Socio>{
 
     //una lista que contiene información de los alquileres de canchas que ha
     //realizado.
-    public void addCancha(AlquilerCancha cancha){
-        boolean encontro = false;
-        int i = 0;
-        while(!encontro && i < alquilerCanchas.size()){
-            //redefino el equals para poder comparar por fecha de alquiler y no por dire memoria
-            if(alquilerCanchas.get(i).getFechaAlquiler().equals(cancha.getFechaAlquiler())){
-                encontro = true;
+    public void addCancha(AlquilerCancha alquiler){
+
+      if((alquiler!=null)&&(!alquilerCanchas.contains(alquiler))){
+          alquilerCanchas.add(alquiler);
+      }
+    }
+
+    //metodo para verificar si la cuota esta pagada
+    public boolean isCuotaPagada(){
+        return this.ultimaCuota;
+    }
+
+    public boolean setCuotaPagada(boolean cuota){
+      return this.ultimaCuota = cuota;
+    }
+
+    //preguntar si el id que me pasan coincide con el numero de la cancha alquilada
+    public boolean esLaMismaCancha(int id){
+        for (AlquilerCancha a:alquilerCanchas) {
+            if (id == a.getId()){
+                return true;
             }
-            i++;
         }
-        if(encontro){
-            alquilerCanchas.add(i, cancha);
-        } else{
-            alquilerCanchas.add(cancha);
-        }
-    }
-
-    //Todos los socios que alquilaron alguna vez la cancha N°13, ordenados cantidad total de alquileres de esa cancha.
-
-    public int getUltimaCuota() {
-        if (ultimaCuota){
-            return 1;
-        }else {
-            return 0;
-        }
+        return false;
     }
 
 
+    public boolean pagoMasDe(double pago){
+        for (AlquilerCancha a:alquilerCanchas) {
+            //si el pago que recibio la cancha alquilada es mayor o igual al pago que quiero buscar
+            if (a.getPagoCancha() >= pago) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+
+    //Todos los socios menores de edad, ordenados por edad
     @Override
     public int compareTo(Socio otro) {
-        return this.getNombre().compareTo(otro.getNombre());
+        return Integer.compare(this.getEdad(), otro.getEdad());
+        //return o1.getEdad() - o2.getEdad();
     }
+    // return this.valor - otro.valor; // Orden ascendente
+    // Para orden descendente: return otro.valor - this.valor;
 
 
-   //a) Todas los socios con cuota impaga, ordenados alfabéticamente (primero por
-    //apellido, y si hay varios con el mismo apellido por nombre)
 }
