@@ -55,7 +55,7 @@ public class Socio implements Comparable<Socio>{
     //preguntar si el id que me pasan coincide con el numero de la cancha alquilada
     public boolean esLaMismaCancha(int id){
         for (AlquilerCancha a:alquilerCanchas) {
-            if (id == a.getId()){
+            if (a.getId() == id){
                 return true;
             }
         }
