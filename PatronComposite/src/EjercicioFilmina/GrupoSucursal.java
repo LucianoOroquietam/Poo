@@ -6,8 +6,8 @@ import java.util.List;
 public class GrupoSucursal extends Empresa{
    private ArrayList<Empresa> elementoEmpresa;
 
-    public GrupoSucursal(String nombre , String ubicacion){
-        super(nombre,ubicacion);
+    public GrupoSucursal(String nombre , String ubicacion, int n){
+        super(nombre,ubicacion,n);
         this.elementoEmpresa = new ArrayList<>();
     }
 
@@ -63,15 +63,15 @@ public class GrupoSucursal extends Empresa{
             List<Empleado> empleadosDeEmpresa = e.getEmpleadoEspecialidad(especialidad);
             empleadosConEspecialidad.addAll(empleadosDeEmpresa);
         }
-
         return empleadosConEspecialidad;
     }
-
 
     public boolean equals(Object o){
         try {
             GrupoSucursal g  = (GrupoSucursal) o;
-            return this.getNombre().equals(g.getNombre());
+            return this.getNombre().equals(g.getNombre()) &&
+                    this.getUbicacion().equals(g.getUbicacion()) &&
+            this.getNumero1() == g.getNumero1();
         }catch (Exception exc){
             return false;
         }

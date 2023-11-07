@@ -6,9 +6,16 @@ public abstract class Empresa {
     private String nombre;
     private String ubicacion;
 
-    public Empresa(String nombre, String ubicacion) {
+    private int numero1;
+
+    public Empresa(String nombre, String ubicacion, int n) {
         this.nombre = nombre;
         this.ubicacion = ubicacion;
+        this.numero1 = n;
+    }
+
+    public int getNumero1() {
+        return numero1;
     }
 
     public String getNombre() {

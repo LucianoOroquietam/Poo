@@ -20,7 +20,6 @@ public abstract class ElementoAseguradora {
     //valor mensual del seguro
     public abstract double getCostoPoliza();
 
-
     //monto asegurado valor del bien sobre el que aplico el seguro
     public abstract double getMontoAsegurado();
     //numero de poliza
