@@ -110,10 +110,10 @@ public class ProductoCompuesto extends Bazar{
 
        }
 
-        if(orden==null)
+        if(orden!=null)
             Collections.sort(elementosQueCumplen,orden);
-
-            //Collections.sort(elementosQueCumplen);
+       // else
+      //      Collections.sort(elementosQueCumplen);
 
         return elementosQueCumplen;
 
