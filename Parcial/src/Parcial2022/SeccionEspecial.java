@@ -8,8 +8,8 @@ public class SeccionEspecial extends SeccionCompuesta {
     private String categoriaFija;
     private int cantidadPclaves;
 
-    public SeccionEspecial(String categoria, int pos) {
-        super(categoria, pos);
+    public SeccionEspecial(int pos) {
+        super( pos);
     }
 
     //Por otro lado, si le solicitan las palabras claves, realiza una unión de

@@ -14,8 +14,7 @@ public class SeccionCompuesta extends ElementoPortal{
     private int pos;
     private static final String SIN_DEFINIR ="Sin definir";
 
-    public SeccionCompuesta(String categoria, int pos) {
-        super(categoria);
+    public SeccionCompuesta( int pos) {
         this.pos = pos;
         this.elementos = new ArrayList<>();
     }

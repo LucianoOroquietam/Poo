@@ -8,12 +8,11 @@ public class Noticia extends ElementoPortal{
     //De cada noticia se guarda: el contenido (texto), el título, el autor, la
     //categoría (“policial”, “espectáculos”, etc, solo tiene una única categoría) y una lista
     //de palabras claves
-    private String contenido,titulo,autor;
+    private String contenido,titulo,autor,categoria;
     private ArrayList<String>palabrasClaves;
     private Condicion condicion;
 
-    public Noticia(String categoria, String c, String titulo, String a, Condicion cond) {
-        super(categoria);
+    public Noticia(String c, String titulo, String a, Condicion cond) {
         this.contenido =c;
         this.titulo = titulo;
         this.autor = a;
@@ -43,6 +42,11 @@ public class Noticia extends ElementoPortal{
     @Override
     public ArrayList<String> calcularpClaves() {
         return new ArrayList<>(palabrasClaves);
+    }
+
+    @Override
+    public String getCategoria() {
+        return this.categoria;
     }
 
     @Override
