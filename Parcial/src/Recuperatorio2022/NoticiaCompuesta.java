@@ -1,10 +1,7 @@
 package Recuperatorio2022;
 
 import Recuperatorio2022.Filtro.Filtro;
-
 import java.util.ArrayList;
-import java.util.Collections;
-
 public class NoticiaCompuesta extends Portal{
     private ArrayList<Portal>elementos;
 
@@ -46,25 +43,31 @@ public class NoticiaCompuesta extends Portal{
 
     @Override
     public Portal getCopia(Filtro condicion) {
-        Portal copia = null;
-
-        if (condicion.cumple(this)){
-            ArrayList<Portal> hijosQueCumplen = new ArrayList<>();
-            copia = new NoticiaCompuesta(getCategoria());
+        Portal copiaHijo = null;
+        ArrayList<Portal> hijosQueCumplen = new ArrayList<>();
             for (Portal p:elementos) {
-                copia = p.getCopia(condicion);
-                if (p!=null)
+                copiaHijo = p.getCopia(condicion);
+                //chequear que cada copia que haga y cumpla con condicion no sea null
+                if (copiaHijo!=null)
                     hijosQueCumplen.add(p);
-
             }
+            //Tener en cuenta que, si una sección, subsección, grupo o subgrupo, no contiene ninguna noticia que cumpla con el
+        //criterio de restricción, la/el misma/o no se debe incluir en la copia.
             if (!hijosQueCumplen.isEmpty()){
-                return copia;
+                NoticiaCompuesta copiaCompuesto = obtenerCopia();
+                //Considerar también que tanto las noticias como las
+                //        //secciones, subsecciones, grupos y subgrupos retornados por este servicio deben ser una copia del original, de tal forma
+                //        //que, si se modifican, el original se mantenga intacto.
+                for (Portal p:elementos) {
+                    copiaCompuesto.addElementos(p);
+                }
+                return copiaCompuesto;
             }
-        }
+        return copiaHijo;
+    }
 
-
-
-        return copia;
+    public NoticiaCompuesta obtenerCopia(){
+       return new NoticiaCompuesta(getCategoria());
     }
 
 

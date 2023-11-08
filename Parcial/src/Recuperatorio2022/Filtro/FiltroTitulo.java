@@ -1,6 +1,7 @@
 package Recuperatorio2022.Filtro;
 
 import Recuperatorio2022.Noticia;
+import Recuperatorio2022.NoticiaCompuesta;
 import Recuperatorio2022.Portal;
 
 public class FiltroTitulo extends Filtro{
@@ -9,7 +10,8 @@ public class FiltroTitulo extends Filtro{
         this.titulo = t;
     }
     @Override
-    public boolean cumple(Noticia c) {
+    public boolean cumple(Portal c) {
         return c.getTitulo().equals(this.titulo);
     }
+
 }

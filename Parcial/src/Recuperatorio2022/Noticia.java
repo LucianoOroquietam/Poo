@@ -43,7 +43,6 @@ public class Noticia extends Portal{
     public Portal getCopia(Filtro condicion) {
 
        if (condicion.cumple(this)){
-
            Noticia copia = new Noticia(this.getCategoria(),getContenido(),getTitulo(),getAutor());
            for (String str:palabrasClaves) {
                copia.addPclaves(str);

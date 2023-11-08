@@ -17,10 +17,8 @@ public abstract class Portal implements Comparable<Portal>{
 
     public abstract ArrayList<String> calcularPalabrasClave();
 
-    //copia con restriccion de tipo noticia
+    //copia con restriccion de tipo noticias
     public abstract Portal getCopia(Filtro condicion);
-
-
 
 
     @Override
