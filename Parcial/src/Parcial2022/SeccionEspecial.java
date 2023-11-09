@@ -9,7 +9,7 @@ public class SeccionEspecial extends SeccionCompuesta {
     private int cantidadPclaves;
 
     public SeccionEspecial(int pos) {
-        super( pos);
+        super(pos);
     }
 
     //Por otro lado, si le solicitan las palabras claves, realiza una unión de
@@ -23,6 +23,7 @@ public class SeccionEspecial extends SeccionCompuesta {
     public ArrayList<String> calcularpClaves() {
         ArrayList<String>aux = super.calcularpClaves();
         Collections.sort(aux);
+
         ArrayList<String>pClaves = new ArrayList<>();
             for (int i =0; (i< aux.size() && i<this.cantidadPclaves); i++){
                 pClaves.add(aux.get(i));

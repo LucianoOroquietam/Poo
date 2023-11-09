@@ -5,7 +5,7 @@ import Ejercicio_5.SeguroSimple;
 import java.util.Comparator;
 
 public class ComparadorCompuesto implements Comparator<SeguroSimple> {
-    Comparator<SeguroSimple>c1,c2;
+   private Comparator<SeguroSimple>c1,c2;
 
     public ComparadorCompuesto(Comparator<SeguroSimple> c1, Comparator<SeguroSimple> c2) {
         this.c1 = c1;

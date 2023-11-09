@@ -8,10 +8,10 @@ public abstract class Empresa {
 
     private int numero1;
 
-    public Empresa(String nombre, String ubicacion, int n) {
+    public Empresa(String nombre, String ubicacion) {
         this.nombre = nombre;
         this.ubicacion = ubicacion;
-        this.numero1 = n;
+
     }
 
     public int getNumero1() {

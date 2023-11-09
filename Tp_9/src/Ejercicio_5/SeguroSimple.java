@@ -5,7 +5,7 @@ import Ejercicio_5.Filtros.Filtro;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class SeguroSimple extends ElementoAseguradora implements Comparable<SeguroSimple>{
+public class SeguroSimple extends ElementoAseguradora {
 
     private String descripcion;
     private int nroPoliza;
@@ -61,10 +61,13 @@ public class SeguroSimple extends ElementoAseguradora implements Comparable<Segu
         return aux;
     }
 
-
-
     @Override
-    public int compareTo(SeguroSimple o) {
-        return 0;
+    public boolean equals(Object obj) {
+        try {
+            SeguroSimple s = (SeguroSimple) obj;
+            return s.descripcion.equals(getDescripcion());
+        }catch (Exception exc){
+            return false;
+        }
     }
 }

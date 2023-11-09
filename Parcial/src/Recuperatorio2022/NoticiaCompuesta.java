@@ -23,7 +23,6 @@ public class NoticiaCompuesta extends Portal{
 
     }
 
-
     //Por otro lado, las palabras claves de una sección/subsección/
     //grupo/subgrupo, se calculan como la unión de todas las palabras claves de los elementos
     //que contiene, sin incluir palabras repetidas.
@@ -43,27 +42,27 @@ public class NoticiaCompuesta extends Portal{
 
     @Override
     public Portal getCopia(Filtro condicion) {
-        Portal copiaHijo = null;
+
         ArrayList<Portal> hijosQueCumplen = new ArrayList<>();
             for (Portal p:elementos) {
-                copiaHijo = p.getCopia(condicion);
+              Portal copiaHijo = p.getCopia(condicion);
                 //chequear que cada copia que haga y cumpla con condicion no sea null
                 if (copiaHijo!=null)
                     hijosQueCumplen.add(p);
             }
-            //Tener en cuenta que, si una sección, subsección, grupo o subgrupo, no contiene ninguna noticia que cumpla con el
-        //criterio de restricción, la/el misma/o no se debe incluir en la copia.
+            //Tener en cuenta que, si una sección, subsección, grupo o subgrupo,
+        // no contiene ninguna noticia que cumpla con el criterio de restricción, la/el misma/o no se debe incluir en la copia.
             if (!hijosQueCumplen.isEmpty()){
                 NoticiaCompuesta copiaCompuesto = obtenerCopia();
                 //Considerar también que tanto las noticias como las
-                //        //secciones, subsecciones, grupos y subgrupos retornados por este servicio deben ser una copia del original, de tal forma
-                //        //que, si se modifican, el original se mantenga intacto.
+                //secciones, subsecciones, grupos y subgrupos retornados por este servicio deben ser una copia del original, de tal forma
+                //que, si se modifican, el original se mantenga intacto.
                 for (Portal p:elementos) {
                     copiaCompuesto.addElementos(p);
                 }
                 return copiaCompuesto;
             }
-        return copiaHijo;
+        return null;
     }
 
     public NoticiaCompuesta obtenerCopia(){
